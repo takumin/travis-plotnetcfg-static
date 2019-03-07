@@ -1,0 +1,3 @@
+[submodule "plotnetcfg"]
+	path = plotnetcfg
+	url = https://github.com/jbenc/plotnetcfg.git

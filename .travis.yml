@@ -1,0 +1,17 @@
+dist: xenial
+language: minimal
+git:
+  depth: 1
+  submodules: false
+env:
+  global:
+    - CC="gcc-7"
+    - EXTRA_CFLAGS="-O2"
+    - LDFLAGS="-static"
+script:
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - sudo apt-get update -q
+  - sudo apt-get install gcc-7 -y
+  - git submodule update --init --recursive --depth 1 || exit 1
+  - make -j $(nproc) -C ./plotnetcfg
+  - file ./plotnetcfg/plotnetcfg
