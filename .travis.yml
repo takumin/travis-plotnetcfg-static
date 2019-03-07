@@ -14,7 +14,7 @@ script:
   - sudo apt-get install gcc-7 libjansson-dev -y
   - git submodule update --init --recursive --depth 1 || exit 1
   - make -j $(nproc) -C ./plotnetcfg || exit 1
-  - cp ./plotnetcfg/plotnetcfg .
+  - cd ./plotnetcfg
   - sha256sum plotnetcfg > plotnetcfg.sha256
   - file plotnetcfg
   - cat plotnetcfg.sha256
