@@ -14,4 +14,19 @@ script:
   - sudo apt-get install gcc-7 libjansson-dev -y
   - git submodule update --init --recursive --depth 1 || exit 1
   - make -j $(nproc) -C ./plotnetcfg || exit 1
-  - file ./plotnetcfg/plotnetcfg
+  - cp ./plotnetcfg/plotnetcfg .
+  - sha256sum plotnetcfg > plotnetcfg.sha256
+  - file plotnetcfg
+  - cat plotnetcfg.sha256
+deploy:
+  provider: releases
+  api_key:
+    secure: "Pu59Ro4ib5Zqx25HPRsi1OOhNavtX8COQn3HHUfhrWQq76iKBlrhkMWZAnY5RgiVf/f6XuwTSbcax/HggnEW6+8fmpBHuQyXPkXQe3ePs4iqs84FonPpojFInRq38K2I8wqjGzAKpBnTB1+UTda3lB1/6bbdqLbbzsU+wnlQKmLAk6/4yIFv16QCRysIsXbqudPyX0xCEJCPUJWBvCfOlfjBkNX1tDdU42mIq77r7GOIsnTBvSCBlvbRtDGbQmWhT5Y8d+pLr7nEdHIo9CCdCfJcdee5tjLm0wYrwKCXAsbluWsOTitfG1YaebAm0Iaypt5kozVRH1N7kO/U4PnUhyV7Q5hBJmm5XfQa+4KXLM3L4nzvvjTMHZO1dm9Xjt9+rm8T7vPFrMyMcPw8i565Tk2/q9ZHp6jByXWGr0Ll6Fos3EvT6Zer2B6Xqet/k8luHgSQCOD6gVUHZFvvbcOBkxgEfZRSsLjO2fHIqBXr/r6A7r+SbQ/n87yYfFqWL+eCXA/WhK0jkPbLbljZznyp9t0jnUWqDL4Urtjdjev8r1qzREL32DseGAqTXYYxZ7xXaRabX2ZxV7IQh9lDyEd3s0HiywgLkcQrpYMhay4YNgEDp4S5glYRGhgwdCWTPnnd1tG+geQxHxhCReCWdkc0TW09/gDGQDzUeTSKpvWBpe4="
+  file_glob: true
+  file:
+    - "plotnetcfg"
+    - "plotnetcfg.sha256"
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
