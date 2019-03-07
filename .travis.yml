@@ -21,11 +21,11 @@ script:
 deploy:
   provider: releases
   api_key:
-    secure: "Rw5l0weiVI1zVamPEXDYJxfGoy52kNGSfTDGNaEkMraL28q0F/RYZLuFjd4KRK9Wz8wYFdqQGMK/t84mAmNxxQjl//rP8vTHwWdJiyRSGXeOedMSMEoT2TrKTRUj30+Z9iXidnYvAmAcrshhj+HZByO4Ty3InrLilocYNm0XYF4YNrruI9CqwOupJdC56GUpr6Zo3WDRHi5ZbLg2WUqHQQN9yVzvt+E+D6Oe8PP6KTRbz/CxwBB7v6Pax+KM0K6DRDfYrrXYqSnunjUZ5VuIe2Yd0tuRnQ66l6WKnG/PCHGvGByW8Sb1kbJfsbvASxnpGzj3kkIYxO7bNyvUNa9T/dCigrkQ3svmwoFMOq1RWXiRPMF/BYWcEnJqwzO79ZJ0Csfq+CdYKhxzhzlXLNIkLndfYWbPFuvidROkNZUiUx595H6lVcwKG/LfXn/50CWdN+hTavncC7/HLCY+oHtBKD+5u1iL3uRbmdQwcfTdLCWV0gQzsneXeB7HVjpUz0KCrQeygt8bX1/LMjgh3Gu7oD2f/EU+jYcmDox1NTc/cxK/PgVyL3GZz2IXbYf8P60ZoIBYEywn+/MYOrW+sqoGOTtGUIw+heBFcJLeNXIp6q5CGbrEFTRw8x7C7TfTbQbE1EmRYTk7xQ1sRJ8GnTeC4w4YCDB+FkUQMdxfN2bW1UY="
+    secure: "iZGTOFpR49Rn0AWRSlxPUShiPsF1GC4ccdq/Y9xzo8btsoyopIhyIV2e++Hc81oAkm+2N17k67x6DMqtuMftStR1PXwv5BKJ4iGTzbmWh1K8H1CUIa7s6KeuieZG8RA3SEVBKqTsaNvWMki0RSOSXe7EWuiAohD+HFGE7f+E0d6jIOfCWR4hbxCW0Dd52hFMmHd9gvn6CEgTVHodBXOZRGRktMFsrnCMexyXZF/EsUxSWVZ+GfCinljjAHcZdDRseRyuXENsv0NOBb4BUmH7HXXEZUy1TvuLqAZlxJ5u/Fgt8CQwxg125hsp3tRM41ymqMiYzY/ARnb242YnGzetfJP0szG7NcJJ+ojDcuNt23foRraI6+ykq/gV8lSPmYTooNr+AUaWLkxyOFjnbfEVQ2vJiaybglWE0ByHW8FfetPhpM4DUqC2rgTCg6YChmExJsST4xep4ZWqlP5H6bCChL/6zubUJFIHKPVAxUzVFUI9QFHJCKvxBnioYD8u71s58mDmqH6zDQzA7m/e02J73cNDKBg5DwK5vtdz0GlN7BTFPYjurY8hF9Pjdyu9UkAdvZyOX0t1P+XpiijiuG7f43XYR8eR1F7//82ER0p8gemHCoGMzg8ZW+RUE5rG884fJqu7hoDOSkSswQNVT4t7Km8aT9JskdV5UI6tq1mWJGc="
   file_glob: true
   file:
-    - "plotnetcfg"
-    - "plotnetcfg.sha256"
+    - "./plotnetcfg"
+    - "./plotnetcfg.sha256"
   skip_cleanup: true
   on:
     tags: true
